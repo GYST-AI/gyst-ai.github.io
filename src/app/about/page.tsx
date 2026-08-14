@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { org } from "@/lib/org";
+import { PAGE, PROSE_WIDTH } from "@/lib/layout";
 import { Callout } from "@/components/Callout";
 import AboutContent from "@/content/about.mdx";
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-4xl">
+    <div className={PAGE}>
       <h1 className="mb-3 text-4xl font-extrabold tracking-tight">
         About {org.acronym}
       </h1>
@@ -18,11 +19,13 @@ export default function AboutPage() {
         {org.name} — {org.tagline.toLowerCase()}.
       </p>
 
-      <div className="prose prose-neutral max-w-none prose-headings:font-extrabold prose-headings:tracking-tight prose-a:text-[var(--color-brand)]">
+      <div
+        className={`prose prose-neutral ${PROSE_WIDTH} prose-headings:font-extrabold prose-headings:tracking-tight prose-a:text-[var(--color-brand)]`}
+      >
         <AboutContent />
       </div>
 
-      <div className="mt-10">
+      <div className={`mt-10 ${PROSE_WIDTH}`}>
         <Callout variant="reassurance" title="For parents and teachers">
           <p>
             A reasonable question to ask about any new conference is whether it

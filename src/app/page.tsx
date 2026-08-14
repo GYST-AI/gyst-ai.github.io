@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { org, INCABS_URL } from "@/lib/org";
+import { SHELL, PAGE } from "@/lib/layout";
 import { PillarCard } from "@/components/PillarCard";
 import { ConferenceCard } from "@/components/ConferenceCard";
 import { GetInvolved } from "@/components/GetInvolved";
@@ -13,8 +14,8 @@ export default function HomePage() {
     <>
       {/* Hero sits on the panel surface — the second deliberate surface of the
           design system, shared with the inCABS site. */}
-      <section className="bg-[var(--color-panel)] px-4 py-12 sm:px-6 sm:py-16 lg:px-10 xl:px-16">
-        <div className="mx-auto max-w-3xl 3xl:max-w-4xl">
+      <section className="bg-[var(--color-panel)] py-12 sm:py-16">
+        <div className={SHELL}>
           <span className="flex w-fit items-center justify-center rounded-xl bg-[var(--color-paper)] p-3 shadow-sm">
             <Image
               src="/images/gystai-logo.png"
@@ -29,7 +30,7 @@ export default function HomePage() {
           <p className="mt-7 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-gold)]">
             {org.name}
           </p>
-          <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-balance text-[var(--color-panel-ink)] sm:text-5xl">
+          <h1 className="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-[var(--color-panel-ink)] sm:text-5xl">
             High school researchers deserve a real academic forum.
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-[var(--color-panel-muted)]">
@@ -53,12 +54,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-4xl">
+      <div className={PAGE}>
         <section className="mb-12">
           <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
             What the foundation does
           </h2>
-          <p className="mb-6 text-[var(--color-ink-muted)]">
+          <p className="mb-6 max-w-3xl text-[var(--color-ink-muted)]">
             {org.acronym} exists because plenty of high school students are
             doing genuine research and have nowhere to take it. Science fairs
             judge a poster in ten minutes. Journals aren&apos;t built for
@@ -92,7 +93,7 @@ export default function HomePage() {
           </p>
         </section>
 
-        <section className="mb-12">
+        <section className="mb-12 max-w-3xl">
           <Callout
             variant="reassurance"
             title="If you're a student wondering whether this is for you"

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { org, INCABS_URL } from "@/lib/org";
+import { SHELL } from "@/lib/layout";
 
 const quickLinks = [
   { href: "/about", label: "About" },
@@ -14,7 +15,7 @@ const featured = org.conferences[0];
 export function Footer() {
   return (
     <footer className="mt-16 bg-[var(--color-panel)]">
-      <div className="px-4 py-10 sm:px-6 lg:px-10 xl:px-16">
+      <div className={`${SHELL} py-10`}>
         <Link href="/" className="flex items-center gap-3">
           <span className="flex items-center justify-center rounded-lg bg-[var(--color-paper)] p-1.5">
             <Image

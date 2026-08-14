@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { org, INCABS_URL } from "@/lib/org";
+import { PAGE, PROSE_WIDTH } from "@/lib/layout";
 import { Callout } from "@/components/Callout";
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ const audiences = [
 
 export default function GetInvolvedPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-4xl">
+    <div className={PAGE}>
       <h1 className="mb-4 text-4xl font-extrabold tracking-tight">
         Get involved
       </h1>
@@ -97,7 +98,7 @@ export default function GetInvolvedPage() {
       </div>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">Contact</h2>
-      <p className="mb-2">
+      <p className={`mb-2 ${PROSE_WIDTH}`}>
         For anything about the foundation itself:{" "}
         <a
           href={`mailto:${org.contact.email}`}
@@ -106,12 +107,12 @@ export default function GetInvolvedPage() {
           {org.contact.email}
         </a>
       </p>
-      <p className="mb-6 text-[var(--color-ink-muted)]">
+      <p className={`mb-6 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
         For anything about a specific conference — submissions, deadlines,
         registration, travel — please use the contact details on that
         conference&apos;s own site.
       </p>
-      <p className="text-sm text-[var(--color-ink-muted)]">
+      <p className={`${PROSE_WIDTH} text-sm text-[var(--color-ink-muted)]`}>
         We are a fully volunteer team, so replies can take a few days. If you
         do not hear back within a week, send it again — it is far more likely
         we missed it than that we ignored it.
