@@ -44,12 +44,41 @@ export function ConferenceCard({
 
         <p className="mb-4">{conference.description}</p>
 
-        <a
-          href={conference.url}
-          className="inline-block font-semibold text-[var(--color-brand)] underline underline-offset-2"
-        >
-          Visit the {conference.acronym} {conference.year} site →
-        </a>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a
+            href={conference.url}
+            className="font-semibold text-[var(--color-brand)] underline underline-offset-2"
+          >
+            Visit the {conference.acronym} {conference.year} site →
+          </a>
+          {conference.cfpUrl && (
+            <a
+              href={conference.cfpUrl}
+              className="inline-flex items-center gap-2 font-semibold text-[var(--color-gold-ink)] underline underline-offset-2"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                className="h-4 w-4 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M8 1.5v8.5" />
+                <path d="M4.5 7L8 10.5 11.5 7" />
+                <path d="M2 12.5v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1" />
+              </svg>
+              Download the Call for Papers
+              {conference.cfpSizeLabel && (
+                <span className="font-medium opacity-70">
+                  ({conference.cfpSizeLabel})
+                </span>
+              )}
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );

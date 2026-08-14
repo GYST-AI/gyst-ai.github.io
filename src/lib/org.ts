@@ -31,6 +31,11 @@ export type ConferenceEntry = {
   dates: string | null;
   location: string | null;
   url: string;
+  /** The conference's Call for Papers PDF. Hosted on the conference's own
+   *  site, never copied here — one file, one URL, so the two sites cannot
+   *  drift apart. */
+  cfpUrl: string | null;
+  cfpSizeLabel: string | null;
   logoUrl: string;
 };
 
@@ -110,6 +115,8 @@ export const org: OrgData = {
       dates: "July 8–10, 2027",
       location: "Washington, D.C., USA",
       url: INCABS_URL,
+      cfpUrl: `${INCABS_URL}/cfp/inCABS-2027-call-for-papers.pdf`,
+      cfpSizeLabel: "PDF, 2.1 MB",
       logoUrl: "/images/incabs-logo.png",
     },
   ],
