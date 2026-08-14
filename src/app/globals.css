@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Design system shared with the inCABS 2027 site (incabs-2027.github.io).
+   The surfaces — paper and panel — are deliberately identical across both
+   sites, because that family resemblance is what signals "same organization."
+   What differs is the brand role: inCABS owns teal, GYST-AI owns blue. Both
+   are colors from the GYST-AI logo, so nothing leaves the brand palette. */
+
+@theme {
+  /* Custom breakpoint for large monitors/4K/TVs (1920px+ CSS px), so page
+     containers can widen one more step instead of staying pinned at the
+     2xl (1536px) width all the way up to a 4K display. */
+  --breakpoint-3xl: 120rem;
+
+  /* System sans only, zero font bytes downloaded. One confident weight-driven
+     typeface does the work a second face would otherwise do — including
+     labels and data that used to run in a monospace face; the audience
+     reads that as "coding font," not "official program." */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  /* Warm bone paper, not stark white — reads as a printed program, not a
+     template. */
+  --color-paper: #fbfaf7;
+  --color-paper-raised: #f2f0e9;
+  --color-ink: #0d1b2e;
+  --color-ink-muted: #55637a;
+  --color-border: #dde2e8;
+
+  /* GYST-AI brand blue (#004faa), text-safe on paper at ~7.5:1. This is the
+     foundation's primary color, and the deliberate point of difference from
+     inCABS, which runs teal in this role. Links, nav, borders, body CTAs. */
+  --color-brand: #004faa;
+  --color-brand-dark: #003876;
+
+  /* GYST-AI brand teal, exact (#018c93). Fills and dark-panel highlights
+     ONLY; not running text on paper — it IS text-safe on --color-panel.
+     Also the color that ties back to inCABS. Pair paper fills with
+     --color-ink text, never white. */
+  --color-accent: #018c93;
+
+  /* GYST-AI brand orange (#fe6904) — the prestige/CTA accent. Fill only.
+     Pair fills with --color-ink text. For orange as running text on paper,
+     use --color-gold-ink instead (dark, ~7:1). */
+  --color-gold: #fe6904;
+  --color-gold-ink: #9a3412;
+  --color-gold-tint: #fde3cf;
+
+  /* Deep brand blue chrome (#004faa family, darkened) — header, hero, and
+     footer, not a one-off hero band. This is the site's second "surface,"
+     as deliberate as paper, and deliberately blue rather than black. */
+  --color-panel: #0a2a52;
+  --color-panel-raised: #123a6b;
+  --color-panel-ink: #f2f0e9;
+  --color-panel-muted: #a9bdd6;
+
+  /* Focus ring color chosen to clear ~3:1 non-text contrast on BOTH paper
+     and panel surfaces, since focusable elements live on both. */
+  --color-focus: #018c93;
+
+  --color-reassurance: #e9f4f5;
+  --color-reassurance-border: #b7dde0;
+
+  /* Secondary brand accents. inCABS reserves purple and pink for per-track
+     badges; the foundation site has no track constraint, so they carry the
+     "what we do" pillars instead. Both are verified on paper: purple
+     ~9.5:1 (safe as text), pink ~4.8:1 (passes, but prefer it as a fill). */
+  --color-secondary: #5e1ba0;
+  --color-secondary-alt: #d90670;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem; /* 16px minimum base */
+  line-height: 1.6; /* helps readers who aren't reading in their first language */
+}
+
+/* Visible focus states everywhere, because full keyboard navigation is not optional. */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 50;
+  background: var(--color-brand);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.375rem 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
