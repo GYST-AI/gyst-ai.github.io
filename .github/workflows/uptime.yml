@@ -1,0 +1,46 @@
+name: Site health check
+
+# The deploy workflow only runs on a push, so it cannot catch the site going
+# wrong later — a Pages setting changed by hand, or another builder taking over.
+# This runs on a schedule so a broken site surfaces as a failed run (and the
+# failure email) instead of being noticed by a visitor.
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the live site
+        run: |
+          base="https://gyst-ai.github.io"
+          failed=0
+
+          body=$(curl -sS --max-time 30 "$base/" || true)
+
+          if printf '%s' "$body" | grep -qi 'content="Jekyll'; then
+            echo "::error::$base/ is serving GitHub's Jekyll build (rendered README), not the Next.js site. Fix: Settings -> Pages -> Build and deployment -> Source -> GitHub Actions, then re-run the deploy workflow."
+            failed=1
+          elif ! printf '%s' "$body" | grep -q '/_next/static/'; then
+            echo "::error::$base/ responded but is not the Next.js export (no /_next/static/ marker)."
+            failed=1
+          else
+            echo "OK: homepage is the Next.js build."
+          fi
+
+          for path in / /about/ /leadership/ /conferences/ /get-involved/; do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 "$base$path" || echo "000")
+            if [ "$code" != "200" ]; then
+              echo "::error::$base$path returned HTTP $code (expected 200)."
+              failed=1
+            else
+              echo "OK: $path -> 200"
+            fi
+          done
+
+          exit $failed

@@ -21,6 +21,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      # Pages must be sourced from Actions, not from a branch. If it is set to
+      # a branch, GitHub's built-in Jekyll builder races this workflow on every
+      # push and roughly half the time wins, replacing the site with a rendered
+      # README. Fail here with instructions rather than deploy into that race.
+      - name: Verify Pages source is GitHub Actions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          build_type=$(gh api "repos/${{ github.repository }}/pages" --jq '.build_type' 2>/dev/null || echo "unknown")
+          echo "Pages build_type: $build_type"
+          if [ "$build_type" != "workflow" ]; then
+            echo "::error::Pages source is '$build_type', not 'workflow'. GitHub's Jekyll builder will race this workflow and can overwrite the site with README.md. Fix: Settings -> Pages -> Build and deployment -> Source -> GitHub Actions."
+            exit 1
+          fi
+
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
@@ -51,3 +66,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      # Deploying successfully is not the same as being live: another builder
+      # can still mark this deployment inactive. Confirm the served HTML is
+      # actually the Next.js export before calling the run green.
+      - name: Verify live site is the Next.js build
+        run: |
+          url="${{ steps.deployment.outputs.page_url }}"
+          for attempt in 1 2 3 4 5 6; do
+            body=$(curl -sS --max-time 30 "$url" || true)
+            if printf '%s' "$body" | grep -q '/_next/static/'; then
+              echo "Live site is the Next.js build."
+              exit 0
+            fi
+            if printf '%s' "$body" | grep -qi 'content="Jekyll'; then
+              echo "Attempt $attempt: still serving the Jekyll/README build."
+            else
+              echo "Attempt $attempt: no Next.js marker yet."
+            fi
+            sleep 20
+          done
+          echo "::error::$url is not serving the Next.js build. If it is serving Jekyll, set Settings -> Pages -> Source to GitHub Actions."
+          exit 1
