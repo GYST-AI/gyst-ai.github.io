@@ -8,7 +8,7 @@ import "./globals.css";
 export const SITE_URL = "https://gyst-ai.github.io";
 
 const title = `${org.acronym} | ${org.name}`;
-const description = `${org.name} (${org.acronym}) — ${org.mission}`;
+const description = `${org.name} (${org.acronym}). ${org.mission}`;
 const socialImage = {
   url: "/images/gystai-logo.png",
   width: 320,

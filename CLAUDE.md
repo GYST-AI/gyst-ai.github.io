@@ -99,6 +99,30 @@ teachers and parents, who are checking whether this is legitimate.
 - No analytics scripts, no third-party embeds, no web fonts.
 - Target: Lighthouse performance 95+ on mobile throttling.
 
+### Punctuation: no em dashes, ever
+
+**Never use an em dash (—) in anything a visitor can read.** Not in
+`src/lib/org.ts` strings, not in MDX, not in UI copy inside a component. The
+founder's call: it makes the site read as machine-written.
+
+Do not swap in another symbol to do the same job. An en dash (–), a slash, a
+semicolon used as a dramatic pause, or a bullet character standing in for a
+conjunction are all the same problem wearing a different hat. **Rewrite the
+sentence instead**: split it in two, use a comma, or use a word like "and",
+"which", "including", "because", or "so".
+
+Plain hyphens (-) are fine: `GYST-AI`, `peer-reviewed`, `July 8-10, 2027`.
+
+Check before pushing, against the built output rather than the source, so
+nothing slips through MDX:
+
+```bash
+grep -rn '—' src/app src/components src/content src/lib
+```
+
+Existing em dashes in code comments are not visible to users and are not the
+target of this rule, but do not add new ones.
+
 **Write for someone who doesn't know the vocabulary.** Define terms inline on
 first use. Answer the fears directly: Do I need a lab? A professor? What if my
 results are negative? Tone: warm but never condescending. "This is real research

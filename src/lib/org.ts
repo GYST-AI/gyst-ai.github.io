@@ -106,10 +106,10 @@ export const org: OrgData = {
   acronym: "GYST-AI",
   tagline: "Connecting Young Minds with AI and Biomedical Discovery",
   mission:
-    "We give young researchers a real academic forum for their work — peer-reviewed, presented, and taken seriously.",
+    "We give young researchers a real academic forum for their work, where it is peer-reviewed, presented, and taken seriously.",
 
   purpose:
-    "GYST-AI is dedicated to charitable and educational purposes for young scholars, before university, who want to advance their learning and research in the sciences — and to widening access to those opportunities.",
+    "GYST-AI is dedicated to charitable and educational purposes for young scholars, before university, who want to advance their learning and research in the sciences, and to widening access to those opportunities.",
 
   learnerScope:
     "Secondary-school students and other learners who have not yet begun postsecondary education, anywhere in the world.",
@@ -138,7 +138,7 @@ export const org: OrgData = {
 
   board: [],
   boardNote:
-    "The founding Board of Directors is being finalized. Directors will be listed here by name, with their roles, once appointments are confirmed — not before.",
+    "The founding Board of Directors is being finalized. Directors will be listed here by name, with their roles, once appointments are confirmed, and not before.",
 
   officers: [
     {
@@ -157,7 +157,7 @@ export const org: OrgData = {
     },
   ],
   officersNote:
-    "GYST-AI is run by a fully volunteer team. The foundation is young and the team is still growing — additional officers and advisors will be listed here as they join.",
+    "GYST-AI is run by a fully volunteer team. The foundation is young and the team is still growing. Additional officers and advisors will be listed here as they join.",
 
   conferences: [
     {
@@ -167,8 +167,8 @@ export const org: OrgData = {
       theme: "Artificial Intelligence in Biomedical Sciences",
       description:
         "A forum created by and for high school students interested in AI, medicine, biology, and the future of science. Original research is submitted, peer-reviewed by a Technical Program Committee, and presented in person as an oral or poster session.",
-      status: "Inaugural edition · Call for Papers open",
-      dates: "July 8–10, 2027",
+      status: "Inaugural edition, Call for Papers open",
+      dates: "July 8-10, 2027",
       location: "Washington, D.C., USA",
       url: INCABS_URL,
       cfpUrl: `${INCABS_URL}/cfp/inCABS-2027-call-for-papers.pdf`,
@@ -199,7 +199,7 @@ export const org: OrgData = {
   ],
 
   membershipNote:
-    "Membership and sponsorship are being organized now. There is nothing to pay and nothing to sign — get in touch and we will tell you what's involved once the details are settled.",
+    "Membership and sponsorship are being organized now. There is nothing to pay and nothing to sign. Get in touch and we will tell you what's involved once the details are settled.",
 
   legalStatus: null,
   foundedYear: null,

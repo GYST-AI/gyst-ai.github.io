@@ -57,7 +57,7 @@ export default function HomePage() {
               href={INCABS_URL}
               className="rounded-md bg-[var(--color-gold)] px-5 py-3 text-sm font-bold text-[var(--color-ink)] hover:bg-[#ff8a3d]"
             >
-              {featured.acronym} {featured.year} — Call for Papers →
+              {featured.acronym} {featured.year} Call for Papers →
             </a>
             <Link
               href="/about"
@@ -101,10 +101,10 @@ export default function HomePage() {
           <ConferenceCard conference={featured} />
           <p className="mt-4 max-w-3xl text-sm text-[var(--color-ink-muted)]">
             {featured.acronym} {featured.year} is the only program running right
-            now. The foundation is organized to run more than conferences —{" "}
-            {sentenceList(org.activities.slice(1))} as well — but none of those
-            are scheduled yet, and we would rather say so than list plans as if
-            they were events.
+            now. The foundation is organized to run more than conferences,
+            including {sentenceList(org.activities.slice(1))}. None of those are
+            scheduled yet, and we would rather say so than list plans as if they
+            were events.
           </p>
           <p className="mt-3 max-w-3xl text-sm text-[var(--color-ink-muted)]">
             Future editions of {featured.acronym}, and future {org.acronym}{" "}

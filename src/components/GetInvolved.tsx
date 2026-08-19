@@ -7,7 +7,7 @@ const options = [
   {
     title: "Become a sponsor",
     description:
-      "Help fund an international platform for first-time student researchers — venue, review infrastructure, and keeping participation costs down.",
+      "Help fund an international platform for first-time student researchers, covering venue, review infrastructure, and keeping participation costs down.",
     subject: "Sponsorship inquiry",
   },
   {

@@ -16,7 +16,7 @@ export default function AboutPage() {
         About {org.acronym}
       </h1>
       <p className="mb-10 max-w-2xl text-lg text-[var(--color-ink-muted)]">
-        {org.name} — {org.tagline.toLowerCase()}.
+        {org.name}. {org.tagline}.
       </p>
 
       <div

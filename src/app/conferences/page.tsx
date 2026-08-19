@@ -15,9 +15,9 @@ export default function ConferencesPage() {
       </h1>
       <p className="mb-10 max-w-2xl text-[var(--color-ink-muted)]">
         {org.name} ({org.acronym}) runs international research conferences for
-        students before university: {org.tagline.toLowerCase()}. Each conference
-        sets its own eligibility rules and has its own site, program, and
-        committee. Here is what is currently running.
+        students before university. Each conference sets its own eligibility
+        rules and has its own site, program, and committee. Here is what is
+        currently running.
       </p>
 
       <div className="mb-8 space-y-6">
@@ -38,7 +38,7 @@ export default function ConferencesPage() {
         Conferences are also not the whole remit: the foundation is organized to
         run lectures, workshops, research opportunities, mentorship, and
         competitions too. Nothing beyond the {org.conferences[0].year} edition
-        has been scheduled yet — when it is, it will be announced here first.
+        has been scheduled yet. When it is, it will be announced here first.
       </p>
 
       <p className="text-sm">

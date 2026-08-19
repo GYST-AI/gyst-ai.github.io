@@ -14,7 +14,7 @@ const featured = org.conferences[0];
 const audiences = [
   {
     title: "Students",
-    description: `Submit your research to ${featured.acronym} ${featured.year}. Everything you need — tracks, deadlines, paper format, and the submission link — is on the conference site.`,
+    description: `Submit your research to ${featured.acronym} ${featured.year}. Tracks, deadlines, paper format, and the submission link are all on the conference site.`,
     action: {
       label: `Go to ${featured.acronym} ${featured.year} →`,
       href: INCABS_URL,
@@ -116,14 +116,14 @@ export default function GetInvolvedPage() {
         </a>
       </p>
       <p className={`mb-6 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
-        For anything about a specific conference — submissions, deadlines,
-        registration, travel — please use the contact details on that
-        conference&apos;s own site.
+        For anything about a specific conference, such as submissions,
+        deadlines, registration, or travel, please use the contact details on
+        that conference&apos;s own site.
       </p>
       <p className={`${PROSE_WIDTH} text-sm text-[var(--color-ink-muted)]`}>
         We are a fully volunteer team, so replies can take a few days. If you
-        do not hear back within a week, send it again — it is far more likely
-        we missed it than that we ignored it.
+        do not hear back within a week, send it again. It is far more likely we
+        missed it than that we ignored it.
       </p>
     </div>
   );

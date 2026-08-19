@@ -17,9 +17,9 @@ export default function LeadershipPage() {
       <p className={`mb-10 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
         Three separate groups run {org.acronym}, and it is worth knowing which
         does what. A Board of Directors governs the foundation. Officers run it
-        day to day, and they are high school students — that is deliberate, since
+        day to day, and they are high school students. That is deliberate, since
         a forum built for young researchers should be run by them too. Papers are
-        judged by neither: an independent Technical Program Committee does that.
+        judged by neither. An independent Technical Program Committee does that.
       </p>
 
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
