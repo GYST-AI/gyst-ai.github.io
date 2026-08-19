@@ -81,10 +81,10 @@ export default function HomePage() {
           <p className="mb-6 max-w-3xl text-[var(--color-ink-muted)]">
             {org.acronym} exists because plenty of students are doing genuine
             research long before university and have nowhere to take it. Science
-            fairs judge a poster in ten minutes. Journals aren&apos;t built for
-            first-time authors. We run the missing middle: a conference with
-            real peer review, where the work is read properly and the students
-            present it themselves.
+            fairs give you a few minutes at a poster, and journals aren&apos;t
+            really built for first-time authors. We run the missing middle: a
+            conference with real peer review, where the work is read properly
+            and the students present it themselves.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-3">
@@ -103,8 +103,7 @@ export default function HomePage() {
             {featured.acronym} {featured.year} is the only program running right
             now. The foundation is organized to run more than conferences,
             including {sentenceList(org.activities.slice(1))}. None of those are
-            scheduled yet, and we would rather say so than list plans as if they
-            were events.
+            scheduled yet. We will add each one here once it has dates.
           </p>
           <p className="mt-3 max-w-3xl text-sm text-[var(--color-ink-muted)]">
             Future editions of {featured.acronym}, and future {org.acronym}{" "}

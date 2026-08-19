@@ -138,7 +138,7 @@ export const org: OrgData = {
 
   board: [],
   boardNote:
-    "The founding Board of Directors is being finalized. Directors will be listed here by name, with their roles, once appointments are confirmed, and not before.",
+    "Our founding Board of Directors is coming together now. We will introduce each director here, with their role, as their appointment is confirmed.",
 
   officers: [
     {
@@ -181,7 +181,7 @@ export const org: OrgData = {
     {
       title: "We run international conferences",
       description:
-        "Not science fairs. Students submit original research papers, present them to an audience of peers, and take part in a program built the way academic conferences are built. Conferences are the first thing we run, not the only thing we are built to run.",
+        "A step beyond the science fair. Students submit original research papers, present them to an audience of peers, and take part in a program built the way academic conferences are built. Conferences are the first thing we run, and not the only thing we are built to run.",
       accent: "var(--color-accent)",
     },
     {

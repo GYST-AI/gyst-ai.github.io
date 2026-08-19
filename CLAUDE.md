@@ -99,6 +99,34 @@ teachers and parents, who are checking whether this is legitimate.
 - No analytics scripts, no third-party embeds, no web fonts.
 - Target: Lighthouse performance 95+ on mobile throttling.
 
+### Tone: show integrity, don't narrate it
+
+The integrity rules above govern **what the site says**. They are not a licence
+to make the site *talk about* how honest it is. Copy that congratulates itself
+on its own standards reads as defensive, and it puts a first-time visitor on
+the back foot when the whole point is to make them feel welcome.
+
+Mark an unknown `<TBA />` and move on. Do not append a clause explaining that
+we marked it TBA instead of guessing. The empty board section already makes the
+point; saying "rather than padded out with names we hope to have" makes it
+twice, and the second time sounds like an accusation aimed at someone else.
+
+Patterns to avoid, all of which have been removed at least once:
+
+- Trailing insistence: "once appointments are confirmed, **and not before**"
+- Virtue commentary: "**rather than** filled in with a plausible guess",
+  "**rather than** padded out with names we hope to have"
+- Us-versus-them: "plenty of things that look like this are not what they
+  claim to be", "**we would rather** say so than list plans as if they were
+  events"
+- Talking down about what students already do. Science fairs are where most of
+  this audience is coming from. Position inCABS as the next step up, never as
+  the serious alternative to something beneath it.
+
+Write it the way a friendly person would say it out loud: "Our founding Board
+of Directors is coming together now. We will introduce each director here, with
+their role, as their appointment is confirmed." Same facts, no lecture.
+
 ### Punctuation: no em dashes, ever
 
 **Never use an em dash (—) in anything a visitor can read.** Not in

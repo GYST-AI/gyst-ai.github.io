@@ -28,20 +28,21 @@ export default function AboutPage() {
       <div className={`mt-10 ${PROSE_WIDTH}`}>
         <Callout variant="reassurance" title="For parents and teachers">
           <p>
-            A reasonable question to ask about any new conference is whether it
-            is real. Ours is new and says so: {org.acronym} was formed to run
-            its first conference, and that conference has not happened yet.
+            Wondering whether a brand-new conference is worth your student&apos;s
+            time is a fair question, and we would ask it too. {org.acronym} was
+            formed to run its first conference, and that conference has not
+            happened yet.
           </p>
           <p>
-            What you can check today: the{" "}
-            <Link href="/leadership">people running it</Link> are named with
-            their schools, submissions are handled through Microsoft CMT (the
-            same peer-review system used by professional conferences), and
-            every detail that has not been decided is marked{" "}
-            <span className="font-semibold">To be announced</span> rather than
-            filled in with a plausible guess. Our Board of Directors is still
-            being formed, so that section sits empty rather than padded out with
-            names we hope to have. If something here is unclear,{" "}
+            Here is what you can look at today. The{" "}
+            <Link href="/leadership">people running it</Link> are named, along
+            with their schools. Submissions go through Microsoft CMT, the same
+            peer-review system professional conferences use. Anything still
+            being decided is marked{" "}
+            <span className="font-semibold">To be announced</span>, and our
+            Board of Directors is coming together now, so you will see that
+            section fill in as appointments are confirmed. If anything here is
+            unclear, please{" "}
             <a href={`mailto:${org.contact.email}`}>email us and ask</a>.
           </p>
         </Callout>

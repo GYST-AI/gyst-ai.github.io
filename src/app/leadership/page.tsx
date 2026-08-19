@@ -18,8 +18,9 @@ export default function LeadershipPage() {
         Three separate groups run {org.acronym}, and it is worth knowing which
         does what. A Board of Directors governs the foundation. Officers run it
         day to day, and they are high school students. That is deliberate, since
-        a forum built for young researchers should be run by them too. Papers are
-        judged by neither. An independent Technical Program Committee does that.
+        a forum built for young researchers should be run by them too. Neither
+        group judges the papers. An independent Technical Program Committee
+        does that.
       </p>
 
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
@@ -33,7 +34,7 @@ export default function LeadershipPage() {
         </div>
       ) : (
         <div className={`mb-12 ${PROSE_WIDTH}`}>
-          <Callout variant="info" title="Being finalized">
+          <Callout variant="info" title="Coming together">
             <p>{org.boardNote}</p>
           </Callout>
         </div>

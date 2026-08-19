@@ -23,7 +23,7 @@ const audiences = [
   {
     title: "Teachers, schools, and programs",
     description:
-      "Encourage a student, or ask us anything you need in order to vouch for this to a parent or an administrator. We would rather answer a sceptical question than not get it.",
+      "Encourage a student, or ask us anything you need in order to vouch for this to a parent or an administrator. No question is too basic or too pointed, and we would much rather you ask.",
     action: {
       label: "Ask us a question →",
       href: `mailto:${org.contact.email}?subject=${encodeURIComponent("Question from a teacher or school")}`,
