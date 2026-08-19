@@ -39,7 +39,9 @@ export default function AboutPage() {
             same peer-review system used by professional conferences), and
             every detail that has not been decided is marked{" "}
             <span className="font-semibold">To be announced</span> rather than
-            filled in with a plausible guess. If something here is unclear,{" "}
+            filled in with a plausible guess. Our Board of Directors is still
+            being formed, so that section sits empty rather than padded out with
+            names we hope to have. If something here is unclear,{" "}
             <a href={`mailto:${org.contact.email}`}>email us and ask</a>.
           </p>
         </Callout>

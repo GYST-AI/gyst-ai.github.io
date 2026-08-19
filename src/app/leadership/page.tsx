@@ -14,20 +14,39 @@ export default function LeadershipPage() {
       <h1 className="mb-4 text-4xl font-extrabold tracking-tight">
         Leadership
       </h1>
-      <p className="mb-8 max-w-2xl text-[var(--color-ink-muted)]">
-        {org.acronym} is led by high school students. That is deliberate — a
-        forum built for young researchers is run by them too, with the
-        conference program itself reviewed by an independent Technical Program
-        Committee.
+      <p className={`mb-10 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
+        Three separate groups run {org.acronym}, and it is worth knowing which
+        does what. A Board of Directors governs the foundation. Officers run it
+        day to day, and they are high school students — that is deliberate, since
+        a forum built for young researchers should be run by them too. Papers are
+        judged by neither: an independent Technical Program Committee does that.
       </p>
 
+      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
+        Board of Directors
+      </h2>
+      {org.board.length > 0 ? (
+        <div className="mb-12 space-y-4">
+          {org.board.map((director) => (
+            <OfficerCard key={director.name} officer={director} />
+          ))}
+        </div>
+      ) : (
+        <div className={`mb-12 ${PROSE_WIDTH}`}>
+          <Callout variant="info" title="Being finalized">
+            <p>{org.boardNote}</p>
+          </Callout>
+        </div>
+      )}
+
+      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">Officers</h2>
       <div className="mb-8 space-y-4">
         {org.officers.map((officer) => (
           <OfficerCard key={officer.name} officer={officer} />
         ))}
       </div>
 
-      <p className={`mb-8 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
+      <p className={`mb-12 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
         {org.officersNote}
       </p>
 
@@ -35,7 +54,7 @@ export default function LeadershipPage() {
         <p>
           Papers submitted to {org.acronym} conferences are reviewed by a
           Technical Program Committee, separately from the foundation&apos;s
-          officers. The committee for {org.conferences[0].acronym}{" "}
+          board and officers. The committee for {org.conferences[0].acronym}{" "}
           {org.conferences[0].year} is still being formed, and is listed on{" "}
           <a href={org.conferences[0].url}>
             the {org.conferences[0].acronym} {org.conferences[0].year} site

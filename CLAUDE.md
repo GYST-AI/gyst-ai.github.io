@@ -42,12 +42,21 @@ single most common way this setup breaks.
    non-affiliation disclaimer. No third-party logos.
 3. **Never promise publication, indexing, or DOIs.**
 4. **Never list a named person without confirmed consent.** Currently confirmed:
-   Chenlyvia Xiong and Zimo Wen only.
+   Chenlyvia Xiong and Zimo Wen only. This covers board directors too —
+   `org.board` stays `[]` until the founder confirms each appointment by name.
+   A board seat is not a reason to relax the rule; it is a reason to apply it.
 5. **No payment links, fee tables, or bank details.** Membership and sponsorship
    are expression-of-interest `mailto:` links only.
-6. **Make no claim about legal or nonprofit status.** GYST-AI's incorporation
-   status is undetermined; the site is silent on it. No "nonprofit", no
-   501(c)(3), no EIN, no donation solicitation. `org.legalStatus` stays `null`.
+6. **State the purpose; claim no status.** GYST-AI is dedicated to *charitable
+   and educational purposes* — this is the founder's own wording and the site
+   says it plainly (`org.purpose`). That is a statement about what the
+   foundation is **for**. It is not a claim about what it **is**, and the two
+   must never blur. Still prohibited without explicit founder confirmation:
+   any assertion of incorporation, nonprofit or 501(c)(3) recognition, an EIN,
+   tax-deductibility, or any solicitation of donations. `org.legalStatus`,
+   `org.foundedYear`, and `org.mailingAddress` stay `null`. The About page's
+   "What we don't do" list carries the explicit disclaimer that keeps the
+   purpose language honest — do not remove that bullet.
 7. **Every claim must trace** to `references/`, or to a decision recorded here.
    If it doesn't, leave it out and flag it.
 
@@ -58,12 +67,31 @@ hasn't happened yet. Every unverifiable claim makes it resemble a predatory
 conference — the fake-venue scam academics are trained to filter out. Honest
 "TBA" reads as credible; invented specifics that later change do not.
 
+## Scope — the foundation is wider than the conference
+
+Two layers, and conflating them is the most common copy error here:
+
+- **The foundation** serves secondary-school students and other learners who
+  have not yet begun postsecondary education, anywhere (`org.learnerScope`),
+  across biomedical sciences, AI, medicine, technology, and related STEM
+  (`org.disciplines`). It is organized to run conferences, lectures, workshops,
+  research opportunities, mentorship, and competitions (`org.activities`).
+- **A conference** sets its own eligibility. inCABS 2027 requires a recognized
+  high school. **Never restate a conference's eligibility rule as a
+  foundation-level fact** — that is what pillar 3 used to do.
+
+`org.activities` is scope, not a schedule. Only inCABS 2027 exists. Anything
+else must read as what the foundation is organized to do, and must sit visibly
+apart from what is running. No dates, no "coming soon", no `<TBA />` badge that
+implies a program is already planned.
+
 ## Audience rules
 
 A 16-year-old who has never written or submitted a research paper, often on a
 mid-range Android phone, on metered mobile data, in a country where bandwidth is
-expensive. Also their teachers and parents, who are checking whether this is
-legitimate.
+expensive. Younger and older pre-university learners too — the foundation's
+remit is everyone before postsecondary, not high school alone. Also their
+teachers and parents, who are checking whether this is legitimate.
 
 **Performance is an equity issue, not an optimization exercise.**
 
@@ -106,15 +134,21 @@ No web fonts (system sans only). No dark mode. No custom animations.
 1. `npm run build` passes locally
 2. Scan the built output for risky claims:
    ```bash
-   grep -rniE 'deadline|DOI|indexed|proceedings|ACM|IEEE|\$|fee|register|nonprofit|501' out/
+   grep -rniE 'deadline|DOI|indexed|proceedings|ACM|IEEE|\$|fee|register|charitable|nonprofit|501|donat|tax' out/
    ```
    Most hits are legitimate. Read each one and confirm it complies with the
-   rules above.
+   rules above. Specifically: every `charitable` hit must be purpose language
+   (rule 6). Any hit asserting nonprofit status, 501(c)(3), an EIN,
+   tax-deductibility, or asking for a donation is a bug — there should be zero.
 3. No `basePath` or `assetPrefix` in `next.config.ts`
 4. No `'use client'` added without a stated reason
 
 ## Open items — blocked on the foundation, do not invent
 
+- **Board of Directors names**, pending founder confirmation. `org.board` is
+  `[]`; `/leadership` renders a "being finalized" callout until it isn't.
+  Populating the array is the whole change — the page switches to cards on its
+  own, no component edits needed.
 - Photos for Chenlyvia Xiong and Zimo Wen (`photoUrl` is `null`; an initials
   avatar holds the space)
 - Additional officers or advisors, with confirmed consent

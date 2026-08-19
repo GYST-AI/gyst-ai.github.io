@@ -9,6 +9,21 @@ import { Callout } from "@/components/Callout";
 
 const featured = org.conferences[0];
 
+// org.disciplines and org.activities are stored capitalized so they can be
+// listed on their own. Dropping only the first letter's case lets them sit
+// inside a sentence without flattening an acronym — "Related STEM disciplines"
+// must not become "related stem disciplines".
+function inSentence(value: string): string {
+  return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+/** "a, b, and c" — the last item joined with "and", not a bare comma. */
+function sentenceList(values: string[]): string {
+  const items = values.map(inSentence);
+  if (items.length < 2) return items.join("");
+  return `${items.slice(0, -1).join(", ")}, and ${items.at(-1)}`;
+}
+
 export default function HomePage() {
   return (
     <>
@@ -31,7 +46,7 @@ export default function HomePage() {
             {org.name}
           </p>
           <h1 className="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-[var(--color-panel-ink)] sm:text-5xl">
-            High school researchers deserve a real academic forum.
+            Young researchers deserve a real academic forum.
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-[var(--color-panel-muted)]">
             {org.mission}
@@ -59,10 +74,14 @@ export default function HomePage() {
           <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
             What the foundation does
           </h2>
+          <p className="mb-4 max-w-3xl text-[var(--color-ink-muted)]">
+            {org.purpose} The fields we cover are{" "}
+            {sentenceList(org.disciplines)}.
+          </p>
           <p className="mb-6 max-w-3xl text-[var(--color-ink-muted)]">
-            {org.acronym} exists because plenty of high school students are
-            doing genuine research and have nowhere to take it. Science fairs
-            judge a poster in ten minutes. Journals aren&apos;t built for
+            {org.acronym} exists because plenty of students are doing genuine
+            research long before university and have nowhere to take it. Science
+            fairs judge a poster in ten minutes. Journals aren&apos;t built for
             first-time authors. We run the missing middle: a conference with
             real peer review, where the work is read properly and the students
             present it themselves.
@@ -80,7 +99,14 @@ export default function HomePage() {
             Currently running
           </h2>
           <ConferenceCard conference={featured} />
-          <p className="mt-4 text-sm text-[var(--color-ink-muted)]">
+          <p className="mt-4 max-w-3xl text-sm text-[var(--color-ink-muted)]">
+            {featured.acronym} {featured.year} is the only program running right
+            now. The foundation is organized to run more than conferences —{" "}
+            {sentenceList(org.activities.slice(1))} as well — but none of those
+            are scheduled yet, and we would rather say so than list plans as if
+            they were events.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm text-[var(--color-ink-muted)]">
             Future editions of {featured.acronym}, and future {org.acronym}{" "}
             programs, will be listed on the{" "}
             <Link

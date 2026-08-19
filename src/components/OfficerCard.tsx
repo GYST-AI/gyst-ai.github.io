@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Officer } from "@/lib/org";
+import type { Person } from "@/lib/org";
 import { TBA } from "./TBA";
 
 function initials(name: string): string {
@@ -11,7 +11,9 @@ function initials(name: string): string {
     .toUpperCase();
 }
 
-export function OfficerCard({ officer }: { officer: Officer }) {
+// Renders anyone the foundation names: officers and board directors alike.
+// They are the same shape, so one card keeps the two lists visually identical.
+export function OfficerCard({ officer }: { officer: Person }) {
   return (
     <div className="flex items-start gap-4 rounded-lg border-l-4 border-l-[var(--color-brand)] bg-[var(--color-paper)] p-5 shadow-sm">
       {/* Photos are pending. Until a real one exists, an initials avatar holds
@@ -20,9 +22,9 @@ export function OfficerCard({ officer }: { officer: Officer }) {
         <Image
           src={officer.photoUrl}
           alt={officer.name}
-          width={72}
-          height={72}
-          className="h-18 w-18 shrink-0 rounded-full object-cover"
+          width={64}
+          height={64}
+          className="h-16 w-16 shrink-0 rounded-full object-cover"
         />
       ) : (
         <span

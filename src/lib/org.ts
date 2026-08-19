@@ -1,24 +1,34 @@
 // Single source of truth for everything this site asserts about GYST-AI.
 //
-// Every value here traces to references/inCABS call for paper draft.docx, to
-// "cfp inCABS 27 new.pdf" (the finalized Call for Papers), or to a decision
-// recorded in CLAUDE.md. Unknown values are `null`, never an empty string, and
-// never a placeholder value intended to be replaced later — placeholders get
-// shipped by accident. `null` is what makes <TBA /> fire.
+// Every value here traces to references/cfp inCABS 2027 final.pdf (the
+// finalized Call for Papers), to the founder's written statement of the
+// foundation's purpose, or to a decision recorded in CLAUDE.md. Unknown values
+// are `null`, never an empty string, and never a placeholder value intended to
+// be replaced later — placeholders get shipped by accident. `null` is what
+// makes <TBA /> fire.
 
 /** The inCABS 2027 conference site. Every cross-site link uses this, so the
  *  URL exists in exactly one place if it ever changes (e.g. to incabs.org). */
 export const INCABS_URL = "https://incabs-2027.github.io";
 
-export type Officer = {
+/** A named person on the site. Officers and directors are the same shape, so
+ *  one card component renders both. No person appears in any array below
+ *  without confirmed consent — see CLAUDE.md. */
+export type Person = {
   name: string;
-  /** Role within the foundation itself. */
+  /** Role held within the foundation, e.g. "Founding President", "Chair". */
   role: string;
-  /** Role on a GYST-AI conference, if any. */
+  /** A second role this person holds, e.g. on a conference. Null if none. */
   conferenceRole: string | null;
   affiliation: string | null;
   photoUrl: string | null;
 };
+
+/** Someone running the foundation day to day. */
+export type Officer = Person;
+
+/** A member of the Board of Directors, which governs the foundation. */
+export type Director = Person;
 
 export type ConferenceEntry = {
   acronym: string;
@@ -52,11 +62,28 @@ export type OrgData = {
   tagline: string;
   /** One sentence. Used in metadata, the hero, and the About page opener. */
   mission: string;
+  /** The foundation's stated purpose, from the founder. This is a statement of
+   *  purpose, not of legal or tax status — see `legalStatus` below. */
+  purpose: string;
+  /** Who the foundation serves. Broader than any single conference's
+   *  eligibility rules, which belong to that conference and are stated on its
+   *  own site — never restated here as a foundation-level fact. */
+  learnerScope: string;
+  /** Fields of study the foundation covers. Wider than inCABS's AI +
+   *  biomedical focus. */
+  disciplines: string[];
+  /** What the foundation is organized to do. This is scope, not a schedule:
+   *  only `conferences` below describes something that actually exists. */
+  activities: string[];
   contact: {
     email: string;
     /** No accounts exist yet. Populate only once they are real and public. */
     socials: { label: string; url: string }[];
   };
+  /** The governing board. Empty until the founder confirms appointments — an
+   *  unconfirmed director is exactly the kind of name that must not ship. */
+  board: Director[];
+  boardNote: string;
   officers: Officer[];
   officersNote: string;
   conferences: ConferenceEntry[];
@@ -65,7 +92,9 @@ export type OrgData = {
   // ---------------------------------------------------------------------
   // Unresolved. Do not populate these without an explicit instruction and a
   // verifiable source. `legalStatus` in particular is a deliberate silence:
-  // the site makes no claim about incorporation or nonprofit status anywhere.
+  // the site states the foundation's charitable and educational *purpose*,
+  // but makes no claim about incorporation, nonprofit recognition, or tax
+  // status anywhere, and solicits no donations.
   // ---------------------------------------------------------------------
   legalStatus: null;
   foundedYear: null;
@@ -77,12 +106,39 @@ export const org: OrgData = {
   acronym: "GYST-AI",
   tagline: "Connecting Young Minds with AI and Biomedical Discovery",
   mission:
-    "We give high school researchers a real academic forum for their work — peer-reviewed, presented, and taken seriously.",
+    "We give young researchers a real academic forum for their work — peer-reviewed, presented, and taken seriously.",
+
+  purpose:
+    "GYST-AI is dedicated to charitable and educational purposes for young scholars, before university, who want to advance their learning and research in the sciences — and to widening access to those opportunities.",
+
+  learnerScope:
+    "Secondary-school students and other learners who have not yet begun postsecondary education, anywhere in the world.",
+
+  disciplines: [
+    "Biomedical sciences",
+    "Artificial intelligence",
+    "Medicine",
+    "Technology",
+    "Related STEM disciplines",
+  ],
+
+  activities: [
+    "Educational conferences",
+    "Lectures",
+    "Workshops",
+    "Research opportunities",
+    "Mentorship",
+    "Competitions",
+  ],
 
   contact: {
     email: "gystem.ai@gmail.com",
     socials: [],
   },
+
+  board: [],
+  boardNote:
+    "The founding Board of Directors is being finalized. Directors will be listed here by name, with their roles, once appointments are confirmed — not before.",
 
   officers: [
     {
@@ -125,7 +181,7 @@ export const org: OrgData = {
     {
       title: "We run international conferences",
       description:
-        "Not science fairs. Students submit original research papers, present them to an audience of peers, and take part in a program built the way academic conferences are built.",
+        "Not science fairs. Students submit original research papers, present them to an audience of peers, and take part in a program built the way academic conferences are built. Conferences are the first thing we run, not the only thing we are built to run.",
       accent: "var(--color-accent)",
     },
     {
@@ -137,7 +193,7 @@ export const org: OrgData = {
     {
       title: "We keep the door open worldwide",
       description:
-        "There are no geographic restrictions on participation. Students from any recognized high school, anywhere, working alone or in a team, are eligible to submit.",
+        "Widening access to science and emerging technology is part of the point. There are no geographic restrictions on taking part, and no program of ours assumes a student arrives with a laboratory, a mentor, or a budget behind them.",
       accent: "var(--color-secondary-alt)",
     },
   ],

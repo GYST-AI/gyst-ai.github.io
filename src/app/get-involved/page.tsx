@@ -21,7 +21,7 @@ const audiences = [
     },
   },
   {
-    title: "Teachers and schools",
+    title: "Teachers, schools, and programs",
     description:
       "Encourage a student, or ask us anything you need in order to vouch for this to a parent or an administrator. We would rather answer a sceptical question than not get it.",
     action: {
@@ -53,6 +53,14 @@ const audiences = [
     action: {
       label: "Become a member →",
       href: `mailto:${org.contact.email}?subject=${encodeURIComponent("Foundation membership inquiry")}`,
+    },
+  },
+  {
+    title: "Board members and advisors",
+    description: `The ${org.acronym} Board of Directors is being formed now. If you have experience in education, research, or running an organization for young people and would consider serving or advising, we would like to hear from you.`,
+    action: {
+      label: "Express interest →",
+      href: `mailto:${org.contact.email}?subject=${encodeURIComponent("Board / advisor expression of interest")}`,
     },
   },
 ];
