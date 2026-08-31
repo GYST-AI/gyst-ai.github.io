@@ -40,11 +40,22 @@ single most common way this setup breaks.
 2. **Never imply affiliation with ACM, IEEE, or any other body.** The ACM
    formatting template may be referenced, but every mention carries an explicit
    non-affiliation disclaimer. No third-party logos.
+
+   One institutional relationship is on the record, confirmed by the founder
+   on 2026-08-31 and stated on the About page: GYST-AI is currently incubated
+   inside the Center for Data Science at the College of AI, Cyber and Computing,
+   University of Texas at San Antonio, and the Center Director, Dr. Anthony
+   Rios, provides the programmatic mentoring and support. Say that and stop.
+   It is not sponsorship, endorsement, accreditation, or a joint venture, no
+   UTSA logo goes on the site, and no other institution gets the same
+   treatment without the same explicit confirmation.
 3. **Never promise publication, indexing, or DOIs.**
-4. **Never list a named person without confirmed consent.** Currently confirmed:
-   Chenlyvia Xiong and Zimo Wen only. This covers board directors too —
-   `org.board` stays `[]` until the founder confirms each appointment by name.
-   A board seat is not a reason to relax the rule; it is a reason to apply it.
+4. **Never list a named person without confirmed consent.** Confirmed by the
+   founder so far: officers Chenlyvia Xiong and Zimo Wen, and the five
+   directors now in `org.board` (Anthony Rios, H Chad Lane, Chenlyvia Xiong,
+   Dana L. Suskind, Jinjun Xiong), confirmed by name on 2026-08-31. Nobody
+   else ships. A board seat is not a reason to relax the rule; it is a reason
+   to apply it, and the same goes for a Technical Program Committee seat.
 5. **No payment links, fee tables, or bank details.** Membership and sponsorship
    are expression-of-interest `mailto:` links only.
 6. **State the purpose; claim no status.** GYST-AI is dedicated to *charitable
@@ -197,13 +208,12 @@ No web fonts (system sans only). No dark mode. No custom animations.
 
 ## Open items — blocked on the foundation, do not invent
 
-- **Board of Directors names**, pending founder confirmation. `org.board` is
-  `[]`; `/leadership` renders a "being finalized" callout until it isn't.
-  Populating the array is the whole change — the page switches to cards on its
-  own, no component edits needed.
-- Photos for Chenlyvia Xiong and Zimo Wen (`photoUrl` is `null`; an initials
-  avatar holds the space)
-- Additional officers or advisors, with confirmed consent
+- Photos for every named officer and director (`photoUrl` is `null` throughout;
+  an initials avatar holds the space)
+- Board officer roles, if the board elects a chair, vice chair, or treasurer.
+  Every director currently carries the neutral role `"Director"`, because no
+  officer role has been stated. Do not promote anyone to chair on inference.
+- Additional officers, directors, or advisors, with confirmed consent
 - Legal/incorporation status, if and when it exists
 - Social media handles (`org.contact.socials` is `[]`; the footer renders
   nothing until it isn't)

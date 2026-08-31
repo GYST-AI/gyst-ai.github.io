@@ -36,13 +36,12 @@ export default function AboutPage() {
           <p>
             Here is what you can look at today. The{" "}
             <Link href="/leadership">people running it</Link> are named, along
-            with their schools. Submissions go through Microsoft CMT, the same
-            peer-review system professional conferences use. Anything still
-            being decided is marked{" "}
-            <span className="font-semibold">To be announced</span>, and our
-            Board of Directors is coming together now, so you will see that
-            section fill in as appointments are confirmed. If anything here is
-            unclear, please{" "}
+            with their schools and universities, and so is the Board of
+            Directors that governs the foundation. Submissions go through
+            Microsoft CMT, the same peer-review system professional conferences
+            use. Anything still being decided is marked{" "}
+            <span className="font-semibold">To be announced</span>. If anything
+            here is unclear, please{" "}
             <a href={`mailto:${org.contact.email}`}>email us and ask</a>.
           </p>
         </Callout>

@@ -80,8 +80,8 @@ export type OrgData = {
     /** No accounts exist yet. Populate only once they are real and public. */
     socials: { label: string; url: string }[];
   };
-  /** The governing board. Empty until the founder confirms appointments — an
-   *  unconfirmed director is exactly the kind of name that must not ship. */
+  /** The governing board. No director is listed without the founder's explicit
+   *  confirmation by name. An unconfirmed director must not ship. */
   board: Director[];
   boardNote: string;
   officers: Officer[];
@@ -136,9 +136,50 @@ export const org: OrgData = {
     socials: [],
   },
 
-  board: [],
+  // Confirmed by the founder, by name, on 2026-08-31. Nobody is added here
+  // without that same explicit confirmation. See CLAUDE.md, integrity rule 4.
+  board: [
+    {
+      name: "Anthony Rios",
+      role: "Director",
+      conferenceRole: null,
+      affiliation:
+        "Associate Professor, Information Systems and Cybersecurity, University of Texas at San Antonio, Texas",
+      photoUrl: null,
+    },
+    {
+      name: "H Chad Lane",
+      role: "Director",
+      conferenceRole: null,
+      affiliation:
+        "Professor, College of Education, University of Illinois Urbana-Champaign, Illinois",
+      photoUrl: null,
+    },
+    {
+      name: "Chenlyvia Xiong",
+      role: "Director",
+      conferenceRole: "Founding President, GYST-AI",
+      affiliation: "Ronald Reagan High School, San Antonio, Texas",
+      photoUrl: null,
+    },
+    {
+      name: "Dana L. Suskind, MD",
+      role: "Director",
+      conferenceRole: null,
+      affiliation: "Professor of Surgery, University of Chicago, Illinois",
+      photoUrl: null,
+    },
+    {
+      name: "Jinjun Xiong",
+      role: "Director",
+      conferenceRole: null,
+      affiliation:
+        "Founding Dean, College of AI, Cyber and Computing, University of Texas at San Antonio, Texas",
+      photoUrl: null,
+    },
+  ],
   boardNote:
-    "Our founding Board of Directors is coming together now. We will introduce each director here, with their role, as their appointment is confirmed.",
+    "Directors serve as volunteers. We will add further appointments here as they are confirmed.",
 
   officers: [
     {

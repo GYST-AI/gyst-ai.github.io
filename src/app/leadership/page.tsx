@@ -26,19 +26,15 @@ export default function LeadershipPage() {
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
         Board of Directors
       </h2>
-      {org.board.length > 0 ? (
-        <div className="mb-12 space-y-4">
-          {org.board.map((director) => (
-            <OfficerCard key={director.name} officer={director} />
-          ))}
-        </div>
-      ) : (
-        <div className={`mb-12 ${PROSE_WIDTH}`}>
-          <Callout variant="info" title="Coming together">
-            <p>{org.boardNote}</p>
-          </Callout>
-        </div>
-      )}
+      <div className="mb-8 space-y-4">
+        {org.board.map((director) => (
+          <OfficerCard key={director.name} officer={director} />
+        ))}
+      </div>
+
+      <p className={`mb-12 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
+        {org.boardNote}
+      </p>
 
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">Officers</h2>
       <div className="mb-8 space-y-4">
