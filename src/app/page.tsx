@@ -46,7 +46,7 @@ export default function HomePage() {
             {org.name}
           </p>
           <h1 className="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-[var(--color-panel-ink)] sm:text-5xl">
-            {org.tagline}.
+            {org.tagline}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-[var(--color-panel-muted)]">
             {org.mission}
