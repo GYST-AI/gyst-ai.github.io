@@ -14,10 +14,10 @@ export default function ConferencesPage() {
         Conferences
       </h1>
       <p className="mb-10 max-w-2xl text-[var(--color-ink-muted)]">
-        {org.name} ({org.acronym}) runs international research conferences for
-        students before university. Each conference sets its own eligibility
-        rules and has its own site, program, and committee. Here is what is
-        currently running.
+        {org.name} ({org.acronym}) sponsors academic conferences run by pre-college students, for
+        pre-college students. Each conference sets its own eligibility
+        rules and has its own themes, programs, and organization committees. Here is what is
+        currently available.
       </p>
 
       <div className="mb-8 space-y-6">
@@ -34,11 +34,10 @@ export default function ConferencesPage() {
       </h2>
       <p className="mb-6 max-w-3xl text-[var(--color-ink-muted)]">
         {org.acronym} intends to run {org.conferences[0].acronym} annually, and
-        to add conferences in other areas of science as the foundation grows.
-        Conferences are also not the whole remit: the foundation is organized to
-        run lectures, workshops, research opportunities, mentorship, and
-        competitions too. Nothing beyond the {org.conferences[0].year} edition
-        has been scheduled yet. When it is, it will be announced here first.
+        to add conferences in other areas of STEM as the foundation grows.
+        Conferences are also not the whole remit: the foundation will also sponsor distinguished
+         lectures, workshops, and compeitions, and provide research opportunities, mentorship, and more. Nothing beyond the {org.conferences[0].year} edition
+        has been finalized yet. When it is, it will be announced here first.
       </p>
 
       <p className="text-sm">
