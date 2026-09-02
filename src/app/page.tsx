@@ -46,7 +46,7 @@ export default function HomePage() {
             {org.name}
           </p>
           <h1 className="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-[var(--color-panel-ink)] sm:text-5xl">
-            Young researchers deserve a real academic forum.
+            {org.tagline}.
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-[var(--color-panel-muted)]">
             {org.mission}
@@ -75,16 +75,24 @@ export default function HomePage() {
             What the foundation does
           </h2>
           <p className="mb-4 max-w-3xl text-[var(--color-ink-muted)]">
-            {org.purpose} The fields we cover are{" "}
+            {org.purpose} We cover a wide varity of science fields, such as{" "}
             {sentenceList(org.disciplines)}.
           </p>
           <p className="mb-6 max-w-3xl text-[var(--color-ink-muted)]">
-            {org.acronym} exists because plenty of students are doing genuine
-            research long before university and have nowhere to take it. Science
-            fairs give you a few minutes at a poster, and journals aren&apos;t
-            really built for first-time authors. We run the missing middle: a
-            conference with real peer review, where the work is read properly
-            and the students present it themselves.
+            {org.acronym} was formed by our founding director, Chenlyvia Xiong (who herself is a high-school student), to address a critical gap 
+            in pre-college STEM education. Many high school students are already conducting serious and creative research well before entering college, 
+            yet they have few opportunities to experience the full academic process through which research is shared, evaluated, discussed, and disseminated. 
+            Traditional science fairs provide valuable opportunities for students to showcase their work, but they are fundamentally different 
+            from academic conferences organized by professional researchers, where participants submit papers, undergo rigorous peer review, present and 
+            discuss their findings, learn from one another, and publish their work in conference proceedings.
+          </p>
+          <p className="mb-6 max-w-3xl text-[var(--color-ink-muted)]">
+            {org.acronym} seeks to bridge this gap by creating authentic, student-centered academic conference experiences for pre-college students. 
+            More importantly, we aim not only to help students participate in conferences, but also to mentor and empower them to 
+            organize and lead them. Students can gain firsthand experience across the entire scholarly conference lifecycle, from developing 
+            a call for papers and coordinating a peer-review process to organizing conference programs, presenting and discussing 
+            research, learning from their peers, and publishing accepted work in conference proceedings. Through these experiences, we seek
+            to cultivate a vibrant pre-college scholarly community in which young researchers learn with, from, and alongside one another.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-3">
@@ -96,14 +104,13 @@ export default function HomePage() {
 
         <section className="mb-12">
           <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
-            Currently running
+            What we are sponsoring so far:
           </h2>
           <ConferenceCard conference={featured} />
           <p className="mt-4 max-w-3xl text-sm text-[var(--color-ink-muted)]">
-            {featured.acronym} {featured.year} is the only program running right
-            now. The foundation is organized to run more than conferences,
-            including {sentenceList(org.activities.slice(1))}. None of those are
-            scheduled yet. We will add each one here once it has dates.
+            {featured.acronym} {featured.year} is the only conference running right
+            now. The foundation will sponsoring other activities beyond conferences in the future,
+            including {sentenceList(org.activities.slice(1))}. Please stay tuned or get in contact if you are interested in contributing to this effort.
           </p>
           <p className="mt-3 max-w-3xl text-sm text-[var(--color-ink-muted)]">
             Future editions of {featured.acronym}, and future {org.acronym}{" "}
@@ -125,9 +132,8 @@ export default function HomePage() {
           >
             <p>
               You do not need a laboratory, a professor, or a published track
-              record. You need a question you took seriously and an honest
-              account of what you did. Negative and inconclusive results are
-              still results, and first-time authors are the point of the whole
+              record. You need a research question that you aim to solve and share with your peer students about what you did. Negative and inconclusive results are
+              still results, and first-time academic research experience is the point of the whole
               exercise.
             </p>
             <p>
