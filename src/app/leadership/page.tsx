@@ -35,30 +35,6 @@ export default function LeadershipPage() {
       <p className={`mb-12 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
         {org.boardNote}
       </p>
-
-      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">Officers</h2>
-      <div className="mb-8 space-y-4">
-        {org.officers.map((officer) => (
-          <OfficerCard key={officer.name} officer={officer} />
-        ))}
-      </div>
-
-      <p className={`mb-12 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
-        {org.officersNote}
-      </p>
-
-      <Callout variant="info" title="Technical Program Committee">
-        <p>
-          Papers submitted to {org.acronym} conferences are reviewed by a
-          Technical Program Committee, separately from the foundation&apos;s
-          board and officers. The committee for {org.conferences[0].acronym}{" "}
-          {org.conferences[0].year} is still being formed, and is listed on{" "}
-          <a href={org.conferences[0].url}>
-            the {org.conferences[0].acronym} {org.conferences[0].year} site
-          </a>{" "}
-          rather than here.
-        </p>
-      </Callout>
     </div>
   );
 }
