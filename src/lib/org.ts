@@ -104,12 +104,12 @@ export type OrgData = {
 export const org: OrgData = {
   name: "Global Youth AI & STEM Foundation",
   acronym: "GYST-AI",
-  tagline: "Connecting Young Minds with AI and Biomedical Discovery",
+  tagline: "Where Scholarship Begins Before College.",
   mission:
-    "We give young researchers a real academic forum for their work, where it is peer-reviewed, presented, and taken seriously.",
+    "We empower pre-college students to share original research, exchange ideas, and engage in authentic academic discourse through a forum created by pre-college students, for pre-college students.",
 
   purpose:
-    "GYST-AI is dedicated to charitable and educational purposes for young scholars, before university, who want to advance their learning and research in the sciences, and to widening access to those opportunities.",
+    "GYST-AI is dedicated to advancing learning and research among pre-college students by supporting academic conferences organized by students, for students. These forums provide young scholars with opportunities to present their work, exchange ideas, learn from one another, and build a vibrant, student-centered academic community before college.",
 
   learnerScope:
     "Secondary-school students and other learners who have not yet begun postsecondary education, anywhere in the world.",
@@ -158,7 +158,7 @@ export const org: OrgData = {
     {
       name: "Chenlyvia Xiong",
       role: "Director",
-      conferenceRole: "Founding President, GYST-AI",
+      conferenceRole: "Founding Director, GYST-AI",
       affiliation: "Ronald Reagan High School, San Antonio, Texas",
       photoUrl: null,
     },
@@ -174,7 +174,7 @@ export const org: OrgData = {
       role: "Director",
       conferenceRole: null,
       affiliation:
-        "Founding Dean, College of AI, Cyber and Computing, University of Texas at San Antonio, Texas",
+        "Dean, College of AI, Cyber and Computing, University of Texas at San Antonio, Texas",
       photoUrl: null,
     },
   ],
@@ -222,19 +222,19 @@ export const org: OrgData = {
     {
       title: "We run international conferences",
       description:
-        "A step beyond the science fair. Students submit original research papers, present them to an audience of peers, and take part in a program built the way academic conferences are built. Conferences are the first thing we run, and not the only thing we are built to run.",
+        "A step beyond the science fair. Students submit original research papers, present them to an audience of peers, and take part in a program built the way academic conferences are built. Conferences are the first thing we run, and there will be more to come.",
       accent: "var(--color-accent)",
     },
     {
-      title: "We put student work through real peer review",
+      title: "We put student work through a rigorous peer review process",
       description:
-        "Every submission is evaluated by approximately three independent reviewers on a Technical Program Committee, against the same criteria used in professional venues: originality, technical merit, methodological rigor, and significance.",
+        "Every submission is evaluated by at least three independent reviewers on a Technical Program Committee, against the same criteria as used in professional venues: originality, technical merit, methodological rigor, and significance.",
       accent: "var(--color-secondary)",
     },
     {
       title: "We keep the door open worldwide",
       description:
-        "Widening access to science and emerging technology is part of the point. There are no geographic restrictions on taking part, and no program of ours assumes a student arrives with a laboratory, a mentor, or a budget behind them.",
+        "Fostering pre-college students interests in science and technologies. There are no geographic restrictions on taking part, and no program of ours assumes a student arrives with a laboratory, a mentor, or a budget behind them.",
       accent: "var(--color-secondary-alt)",
     },
   ],
