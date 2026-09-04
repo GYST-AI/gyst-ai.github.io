@@ -26,7 +26,7 @@ export default function LeadershipPage() {
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
         Board of Directors
       </h2>
-      <div className="mb-8 space-y-4">
+      <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {org.board.map((director) => (
           <OfficerCard key={director.name} officer={director} />
         ))}
