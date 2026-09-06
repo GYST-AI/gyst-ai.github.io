@@ -63,7 +63,8 @@ export type OrgData = {
   /** One sentence. Used in metadata, the hero, and the About page opener. */
   mission: string;
   /** The foundation's stated purpose, from the founder. This is a statement of
-   *  purpose, not of legal or tax status — see `legalStatus` below. */
+   *  purpose, separate from the legal status confirmed in `legalStatus`
+   *  below. */
   purpose: string;
   /** Who the foundation serves. Broader than any single conference's
    *  eligibility rules, which belong to that conference and are stated on its
@@ -97,14 +98,15 @@ export type OrgData = {
   /** Who built this website. The credit label/title are UI copy and live
    *  with the component that renders this. */
   acknowledgement: string;
+  /** Confirmed by the founder on 2026-09-06: GYST-AI is a non-profit
+   *  organization. This does not extend to 501(c)(3) recognition, an EIN,
+   *  tax-deductibility, or incorporation specifics, none of which are
+   *  confirmed. See CLAUDE.md integrity rule 6. */
+  legalStatus: string;
   // ---------------------------------------------------------------------
-  // Unresolved. Do not populate these without an explicit instruction and a
-  // verifiable source. `legalStatus` in particular is a deliberate silence:
-  // the site states the foundation's charitable and educational *purpose*,
-  // but makes no claim about incorporation, nonprofit recognition, or tax
-  // status anywhere, and solicits no donations.
+  // Still unresolved. Do not populate these without an explicit instruction
+  // and a verifiable source.
   // ---------------------------------------------------------------------
-  legalStatus: null;
   foundedYear: null;
   mailingAddress: null;
 };
@@ -259,7 +261,7 @@ export const org: OrgData = {
     {
       title: "We keep the door open worldwide",
       description:
-        "Fostering pre-college students interests in science and technologies. There are no geographic restrictions on taking part, and no program of ours assumes a student arrives with a laboratory, a mentor, or a budget behind them.",
+        "We foster pre-college students' interest in science and technology. There are no geographic restrictions on taking part, and no program of ours assumes a student arrives with a laboratory, a mentor, or a budget behind them.",
       accent: "var(--color-secondary-alt)",
     },
   ],
@@ -269,7 +271,7 @@ export const org: OrgData = {
 
   acknowledgement: "Sri Bhargava Bhamidi",
 
-  legalStatus: null,
+  legalStatus: "Non-profit organization",
   foundedYear: null,
   mailingAddress: null,
 };

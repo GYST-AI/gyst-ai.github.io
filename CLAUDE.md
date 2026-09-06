@@ -58,16 +58,17 @@ single most common way this setup breaks.
    to apply it, and the same goes for a Technical Program Committee seat.
 5. **No payment links, fee tables, or bank details.** Membership and sponsorship
    are expression-of-interest `mailto:` links only.
-6. **State the purpose; claim no status.** GYST-AI is dedicated to *charitable
-   and educational purposes* — this is the founder's own wording and the site
-   says it plainly (`org.purpose`). That is a statement about what the
-   foundation is **for**. It is not a claim about what it **is**, and the two
-   must never blur. Still prohibited without explicit founder confirmation:
-   any assertion of incorporation, nonprofit or 501(c)(3) recognition, an EIN,
-   tax-deductibility, or any solicitation of donations. `org.legalStatus`,
-   `org.foundedYear`, and `org.mailingAddress` stay `null`. The About page's
-   "What we don't do" list carries the explicit disclaimer that keeps the
-   purpose language honest — do not remove that bullet.
+6. **State the purpose; nonprofit status is confirmed, nothing more specific
+   is.** GYST-AI is dedicated to *charitable and educational purposes*, in the
+   founder's own wording, and the site says it plainly (`org.purpose`).
+   Separately, GYST-AI is a confirmed non-profit organization, confirmed by
+   the founder on 2026-09-06, and the site may say so (`org.legalStatus`).
+   Still prohibited without a separate explicit founder confirmation: any
+   assertion of formal incorporation, 501(c)(3) recognition, an EIN,
+   tax-deductibility, or any solicitation of donations. `org.foundedYear` and
+   `org.mailingAddress` stay `null`. The About page's "What we don't do" list
+   carries the explicit disclaimer that keeps the purpose language honest, so
+   do not remove that bullet.
 7. **Every claim must trace** to `references/`, or to a decision recorded here.
    If it doesn't, leave it out and flag it.
 
@@ -200,9 +201,10 @@ No web fonts (system sans only). No dark mode. No custom animations.
    grep -rniE 'deadline|DOI|indexed|proceedings|ACM|IEEE|\$|fee|register|charitable|nonprofit|501|donat|tax' out/
    ```
    Most hits are legitimate. Read each one and confirm it complies with the
-   rules above. Specifically: every `charitable` hit must be purpose language
-   (rule 6). Any hit asserting nonprofit status, 501(c)(3), an EIN,
-   tax-deductibility, or asking for a donation is a bug — there should be zero.
+   rules above. Specifically: every `charitable` hit must be purpose language,
+   and a `nonprofit` hit must match the confirmed wording in `org.legalStatus`
+   (rule 6). Any hit asserting 501(c)(3) recognition, an EIN, tax-deductibility,
+   or asking for a donation is a bug, there should be zero of those.
 3. No `basePath` or `assetPrefix` in `next.config.ts`
 4. No `'use client'` added without a stated reason
 
