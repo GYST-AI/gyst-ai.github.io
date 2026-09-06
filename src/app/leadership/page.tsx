@@ -15,13 +15,16 @@ export default function LeadershipPage() {
         Leadership
       </h1>
       <p className={`mb-10 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
-        Three separate groups run {org.acronym}, and it is worth knowing which
-        does what. A Board of Directors governs the foundation. Officers run it
-        day to day, and they are high school students. That is deliberate, since
-        a forum built for young researchers should be run by them too. Neither
-        group judges the papers. An independent Technical Program Committee
-        does that.
+        {org.name} ({org.acronym}) is a non-profit organization dedicated to advancing learning and research 
+        among pre-college students by supporting academic conferences organized by students, for students.
+        {org.acronym} is currently incubated inside the Center for Data Science at the College of AI, Cyber and Computing, 
+        University of Texas at San Antonio.
       </p>
+
+      <p className={`mb-10 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
+        {org.acronym} is governed by a board of directors as chaired by Dr. Anthony Rios, Director of the Center for Data Science.
+      </p>
+      
 
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
         Board of Directors

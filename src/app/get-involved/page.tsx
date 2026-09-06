@@ -14,7 +14,8 @@ const featured = org.conferences[0];
 const audiences = [
   {
     title: "Students",
-    description: `Submit your research to ${featured.acronym} ${featured.year}. Tracks, deadlines, paper format, and the submission link are all on the conference site.`,
+    description: `Find a conference that interests to you and submit your work to it. Or contact us to start a new conference that
+    may generate interests for other students to submit. We are here to help you. ${featured.acronym} ${featured.year} is a conference that we're currently sponsoring that you may be interested in considering.`,
     action: {
       label: `Go to ${featured.acronym} ${featured.year} →`,
       href: INCABS_URL,
@@ -23,7 +24,7 @@ const audiences = [
   {
     title: "Teachers, schools, and programs",
     description:
-      "Encourage a student, or ask us anything you need in order to vouch for this to a parent or an administrator. No question is too basic or too pointed, and we would much rather you ask.",
+      "Encourage a student to submit their research work to one of our sponsored conferences, or ask us anything you need in order to vouch for this to a student, a parent or an administrator.",
     action: {
       label: "Ask us a question →",
       href: `mailto:${org.contact.email}?subject=${encodeURIComponent("Question from a teacher or school")}`,
@@ -32,7 +33,7 @@ const audiences = [
   {
     title: "Reviewers and mentors",
     description:
-      "Researchers, graduate students, and professionals who can review a six-page student paper carefully and write useful feedback are what make the program work.",
+      "Teachers, researchers, graduate students, and professionals are encouraged to sign up for volunteering as a technical program committee member for our student-run conferences.",
     action: {
       label: "Volunteer to review →",
       href: `mailto:${org.contact.email}?subject=${encodeURIComponent("Reviewer / mentor volunteer")}`,
@@ -41,7 +42,7 @@ const audiences = [
   {
     title: "Sponsors",
     description:
-      "Support venue, review infrastructure, and keeping participation costs down for students who could not otherwise attend.",
+      "Please consider to support us with our conference venues, activities, and keeping participation costs down for students who could not otherwise attend our conferences.",
     action: {
       label: "Become a sponsor →",
       href: `mailto:${org.contact.email}?subject=${encodeURIComponent("Sponsorship inquiry")}`,

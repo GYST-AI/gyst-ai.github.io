@@ -31,16 +31,6 @@ export default function HomePage() {
           design system, shared with the inCABS site. */}
       <section className="bg-[var(--color-panel)] py-12 sm:py-16">
         <div className={SHELL}>
-          <span className="flex w-fit items-center justify-center rounded-xl bg-[var(--color-paper)] p-3 shadow-sm">
-            <Image
-              src="/images/gystai-logo.png"
-              alt={`${org.name} logo`}
-              width={320}
-              height={268}
-              priority
-              className="h-20 w-auto sm:h-24"
-            />
-          </span>
 
           <p className="mt-7 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-gold)]">
             {org.name}
@@ -123,25 +113,6 @@ export default function HomePage() {
             </Link>{" "}
             as they are announced.
           </p>
-        </section>
-
-        <section className="mb-12 max-w-3xl">
-          <Callout
-            variant="reassurance"
-            title="If you're a student wondering whether this is for you"
-          >
-            <p>
-              You do not need a laboratory, a professor, or a published track
-              record. You need a research question that you aim to solve and share with your peer students about what you did. Negative and inconclusive results are
-              still results, and first-time academic research experience is the point of the whole
-              exercise.
-            </p>
-            <p>
-              Parents and teachers checking us out:{" "}
-              <Link href="/about">how we&apos;re organized</Link> is written
-              for you.
-            </p>
-          </Callout>
         </section>
 
         <section>

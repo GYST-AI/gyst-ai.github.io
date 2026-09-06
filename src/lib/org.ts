@@ -142,7 +142,7 @@ export const org: OrgData = {
     {
       name: "Anthony Rios",
       role: "Director",
-      conferenceRole: null,
+      conferenceRole: "Chairperson",
       affiliation:
         "Associate Professor, Information Systems and Cybersecurity, University of Texas at San Antonio, Texas",
       photoUrl: null,
@@ -158,7 +158,7 @@ export const org: OrgData = {
     {
       name: "Chenlyvia Xiong",
       role: "Director",
-      conferenceRole: "Founding Director, GYST-AI",
+      conferenceRole: "Founding Director",
       affiliation: "Ronald Reagan High School, San Antonio, Texas",
       photoUrl: null,
     },
