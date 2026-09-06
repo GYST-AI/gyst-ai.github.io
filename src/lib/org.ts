@@ -266,7 +266,7 @@ export const org: OrgData = {
     "Membership and sponsorship are being organized now. There is nothing to pay and nothing to sign. Get in touch and we will tell you what's involved once the details are settled.",
 
   acknowledgement:
-    "Thank you to Sri Bhargava Bhamidi for building the initial website for GYST-AI.",
+    "Bhargava volunteered his time and skills to design and build this website, giving GYST-AI its first home online. Thank you, Bhargava.",
 
   legalStatus: null,
   foundedYear: null,
