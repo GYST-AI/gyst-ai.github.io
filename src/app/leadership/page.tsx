@@ -51,12 +51,19 @@ export default function LeadershipPage() {
         {org.boardNote}
       </p>
 
-      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
-        Acknowledgement
-      </h2>
-      <p className={`mb-4 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
-        {org.acknowledgement}
-      </p>
+      <div className={`rounded-lg bg-[var(--color-paper-raised)] p-5 shadow-sm ${PROSE_WIDTH}`}>
+        <p className="mb-2.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[var(--color-ink-muted)]">
+          <span
+            aria-hidden="true"
+            className="h-1.5 w-1.5 rounded-full bg-[var(--color-brand)]"
+          />
+          Acknowledgement
+        </p>
+        <p className="text-sm text-[var(--color-ink-muted)]">
+          Site design &amp; development
+        </p>
+        <p className="text-base font-bold">{org.acknowledgement}</p>
+      </div>
     </div>
   );
 }

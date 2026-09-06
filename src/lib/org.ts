@@ -94,6 +94,8 @@ export type OrgData = {
   conferences: ConferenceEntry[];
   pillars: Pillar[];
   membershipNote: string;
+  /** Who built this website. The credit label/title are UI copy and live
+   *  with the component that renders this. */
   acknowledgement: string;
   // ---------------------------------------------------------------------
   // Unresolved. Do not populate these without an explicit instruction and a
@@ -265,8 +267,7 @@ export const org: OrgData = {
   membershipNote:
     "Membership and sponsorship are being organized now. There is nothing to pay and nothing to sign. Get in touch and we will tell you what's involved once the details are settled.",
 
-  acknowledgement:
-    "Thank you to Sri Bhargava Bhamidi for building the initial website for GYST-AI.",
+  acknowledgement: "Sri Bhargava Bhamidi",
 
   legalStatus: null,
   foundedYear: null,
