@@ -146,12 +146,12 @@ export const org: OrgData = {
   // without that same explicit confirmation. See CLAUDE.md, integrity rule 4.
   board: [
     {
-      name: "Anthony Rios",
+      name: "Jinjun Xiong",
       role: "Director",
-      conferenceRole: "Chairperson",
+      conferenceRole: null,
       affiliation:
-        "Associate Professor, Information Systems and Cybersecurity, University of Texas at San Antonio, Texas",
-      photoUrl: "/images/leadership/anthony-rios.jpg",
+        "Dean, College of AI, Cyber and Computing, University of Texas at San Antonio, Texas",
+      photoUrl: "/images/leadership/jinjun-xiong.jpg",
     },
     {
       name: "H Chad Lane",
@@ -169,19 +169,19 @@ export const org: OrgData = {
       photoUrl: "/images/leadership/chenlyvia-xiong.jpg",
     },
     {
+      name: "Anthony Rios",
+      role: "Director",
+      conferenceRole: "Chairperson",
+      affiliation:
+        "Associate Professor, Information Systems and Cybersecurity, University of Texas at San Antonio, Texas",
+      photoUrl: "/images/leadership/anthony-rios.jpg",
+    },
+    {
       name: "Dana L. Suskind, MD",
       role: "Director",
       conferenceRole: null,
       affiliation: "Professor of Surgery, University of Chicago, Illinois",
       photoUrl: "/images/leadership/dana-suskind.jpg",
-    },
-    {
-      name: "Jinjun Xiong",
-      role: "Director",
-      conferenceRole: null,
-      affiliation:
-        "Dean, College of AI, Cyber and Computing, University of Texas at San Antonio, Texas",
-      photoUrl: "/images/leadership/jinjun-xiong.jpg",
     },
   ],
   boardNote:
