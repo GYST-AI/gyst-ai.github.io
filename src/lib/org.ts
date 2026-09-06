@@ -86,9 +86,15 @@ export type OrgData = {
   boardNote: string;
   officers: Officer[];
   officersNote: string;
+  /** The one confirmed institutional relationship. See CLAUDE.md integrity
+   *  rule 2 — links to the host's own pages, not a claim of joint status. */
+  incubation: {
+    links: { label: string; url: string }[];
+  };
   conferences: ConferenceEntry[];
   pillars: Pillar[];
   membershipNote: string;
+  acknowledgement: string;
   // ---------------------------------------------------------------------
   // Unresolved. Do not populate these without an explicit instruction and a
   // verifiable source. `legalStatus` in particular is a deliberate silence:
@@ -145,7 +151,7 @@ export const org: OrgData = {
       conferenceRole: "Chairperson",
       affiliation:
         "Associate Professor, Information Systems and Cybersecurity, University of Texas at San Antonio, Texas",
-      photoUrl: null,
+      photoUrl: "/images/leadership/anthony-rios.jpg",
     },
     {
       name: "H Chad Lane",
@@ -153,21 +159,21 @@ export const org: OrgData = {
       conferenceRole: null,
       affiliation:
         "Professor, College of Education, University of Illinois Urbana-Champaign, Illinois",
-      photoUrl: null,
+      photoUrl: "/images/leadership/h-chad-lane.jpg",
     },
     {
       name: "Chenlyvia Xiong",
       role: "Director",
       conferenceRole: "Founding Director",
       affiliation: "Ronald Reagan High School, San Antonio, Texas",
-      photoUrl: null,
+      photoUrl: "/images/leadership/chenlyvia-xiong.jpg",
     },
     {
       name: "Dana L. Suskind, MD",
       role: "Director",
       conferenceRole: null,
       affiliation: "Professor of Surgery, University of Chicago, Illinois",
-      photoUrl: null,
+      photoUrl: "/images/leadership/dana-suskind.jpg",
     },
     {
       name: "Jinjun Xiong",
@@ -175,7 +181,7 @@ export const org: OrgData = {
       conferenceRole: null,
       affiliation:
         "Dean, College of AI, Cyber and Computing, University of Texas at San Antonio, Texas",
-      photoUrl: null,
+      photoUrl: "/images/leadership/jinjun-xiong.jpg",
     },
   ],
   boardNote:
@@ -187,18 +193,35 @@ export const org: OrgData = {
       role: "Founding President",
       conferenceRole: "Founding General Chair & Program Chair, inCABS 2027",
       affiliation: "Ronald Reagan High School, San Antonio, Texas",
-      photoUrl: null,
+      photoUrl: "/images/leadership/chenlyvia-xiong.jpg",
     },
     {
       name: "Zimo Wen",
       role: "Secretary",
       conferenceRole: "Program Secretary, inCABS 2027",
       affiliation: "Williamsville East High School, Buffalo, New York",
-      photoUrl: null,
+      photoUrl: "/images/leadership/zimo-wen.jpg",
     },
   ],
   officersNote:
     "GYST-AI is run by a fully volunteer team. The foundation is young and the team is still growing. Additional officers and advisors will be listed here as they join.",
+
+  incubation: {
+    links: [
+      {
+        label: "Center for Data Science",
+        url: "https://caicc.utsa.edu/center-for-data-science/",
+      },
+      {
+        label: "College of AI, Cyber and Computing",
+        url: "https://caicc.utsa.edu/",
+      },
+      {
+        label: "University of Texas at San Antonio",
+        url: "https://www.utsa.edu/",
+      },
+    ],
+  },
 
   conferences: [
     {
@@ -241,6 +264,9 @@ export const org: OrgData = {
 
   membershipNote:
     "Membership and sponsorship are being organized now. There is nothing to pay and nothing to sign. Get in touch and we will tell you what's involved once the details are settled.",
+
+  acknowledgement:
+    "Thank you to Sri Bhargava Bhamidi for building the initial website for GYST-AI.",
 
   legalStatus: null,
   foundedYear: null,

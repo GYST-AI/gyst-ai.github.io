@@ -21,10 +21,22 @@ export default function LeadershipPage() {
         University of Texas at San Antonio.
       </p>
 
-      <p className={`mb-10 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
+      <p className={`mb-4 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
         {org.acronym} is governed by a board of directors as chaired by Dr. Anthony Rios, Director of the Center for Data Science.
       </p>
-      
+
+      <ul className="mb-10 flex flex-wrap gap-x-6 gap-y-1">
+        {org.incubation.links.map((link) => (
+          <li key={link.url}>
+            <a
+              href={link.url}
+              className="text-sm font-medium text-[var(--color-brand)] underline underline-offset-2"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
 
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
         Board of Directors
@@ -37,6 +49,13 @@ export default function LeadershipPage() {
 
       <p className={`mb-12 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
         {org.boardNote}
+      </p>
+
+      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
+        Acknowledgement
+      </h2>
+      <p className={`mb-4 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
+        {org.acknowledgement}
       </p>
     </div>
   );
