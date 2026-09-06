@@ -36,7 +36,7 @@ export default function ConferencesPage() {
         {org.acronym} intends to run {org.conferences[0].acronym} annually, and
         to add conferences in other areas of STEM as the foundation grows.
         Conferences are also not the whole remit: the foundation will also sponsor distinguished
-         lectures, workshops, and compeitions, and provide research opportunities, mentorship, and more. Nothing beyond the {org.conferences[0].year} edition
+         lectures, workshops, and competitions, and provide research opportunities, mentorship, and more. Nothing beyond the {org.conferences[0].year} edition
         has been finalized yet. When it is, it will be announced here first.
       </p>
 

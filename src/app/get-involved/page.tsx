@@ -14,8 +14,8 @@ const featured = org.conferences[0];
 const audiences = [
   {
     title: "Students",
-    description: `Find a conference that interests to you and submit your work to it. Or contact us to start a new conference that
-    may generate interests for other students to submit. We are here to help you. ${featured.acronym} ${featured.year} is a conference that we're currently sponsoring that you may be interested in considering.`,
+    description: `Find a conference that interests you and submit your work to it. Or contact us to start a new conference that
+    may generate interest from other students who want to submit. We are here to help you. ${featured.acronym} ${featured.year} is a conference that we're currently sponsoring that you may be interested in.`,
     action: {
       label: `Go to ${featured.acronym} ${featured.year} →`,
       href: INCABS_URL,
@@ -42,7 +42,7 @@ const audiences = [
   {
     title: "Sponsors",
     description:
-      "Please consider to support us with our conference venues, activities, and keeping participation costs down for students who could not otherwise attend our conferences.",
+      "Please consider supporting our conference venues and activities, and helping keep participation costs down for students who could not otherwise attend our conferences.",
     action: {
       label: "Become a sponsor →",
       href: `mailto:${org.contact.email}?subject=${encodeURIComponent("Sponsorship inquiry")}`,
@@ -58,7 +58,7 @@ const audiences = [
   },
   {
     title: "Board members and advisors",
-    description: `The ${org.acronym} Board of Directors is being formed now. If you have experience in education, research, or running an organization for young people and would consider serving or advising, we would like to hear from you.`,
+    description: `Our founding Board of Directors is listed on the Leadership page, and we are open to adding advisors and further directors as the foundation grows. If you have experience in education, research, or running an organization for young people and would consider serving or advising, we would like to hear from you.`,
     action: {
       label: "Express interest →",
       href: `mailto:${org.contact.email}?subject=${encodeURIComponent("Board / advisor expression of interest")}`,

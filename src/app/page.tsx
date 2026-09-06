@@ -65,7 +65,7 @@ export default function HomePage() {
             What the foundation does
           </h2>
           <p className="mb-4 max-w-3xl text-[var(--color-ink-muted)]">
-            {org.purpose} We cover a wide varity of science fields, such as{" "}
+            {org.purpose} We cover a wide variety of science fields, such as{" "}
             {sentenceList(org.disciplines)}.
           </p>
           <p className="mb-6 max-w-3xl text-[var(--color-ink-muted)]">
@@ -99,7 +99,7 @@ export default function HomePage() {
           <ConferenceCard conference={featured} />
           <p className="mt-4 max-w-3xl text-sm text-[var(--color-ink-muted)]">
             {featured.acronym} {featured.year} is the only conference running right
-            now. The foundation will sponsoring other activities beyond conferences in the future,
+            now. The foundation will sponsor other activities beyond conferences in the future,
             including {sentenceList(org.activities.slice(1))}. Please stay tuned or get in contact if you are interested in contributing to this effort.
           </p>
           <p className="mt-3 max-w-3xl text-sm text-[var(--color-ink-muted)]">
