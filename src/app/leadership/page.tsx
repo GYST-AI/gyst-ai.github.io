@@ -20,11 +20,11 @@ export default function LeadershipPage() {
       </p>
 
       <p className={`mb-4 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
-        {org.acronym} is currently incubated inside the 
+        {org.acronym} is currently incubated inside the {" "}
         <a href="https://caicc.utsa.edu/center-for-data-science/" className="text-sm font-medium text-[var(--color-brand)] underline underline-offset-2">
-        Center for Data Science</a> at the 
+        Center for Data Science</a> at the {" "}
         <a href="https://caicc.utsa.edu/" className="text-sm font-medium text-[var(--color-brand)] underline underline-offset-2">
-      College of AI, Cyber and Computing</a>,
+      College of AI, Cyber and Computing</a>, {" "}
         <a href="https://www.utsa.edu/" className="text-sm font-medium text-[var(--color-brand)] underline underline-offset-2">
         The University of Texas at San Antonio</a>. 
         It is governed by a board of directors, chaired by Dr. Anthony Rios, Director of the Center for Data Science.
