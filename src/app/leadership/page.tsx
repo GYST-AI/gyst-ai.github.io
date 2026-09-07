@@ -17,26 +17,18 @@ export default function LeadershipPage() {
       <p className={`mb-10 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
         {org.name} ({org.acronym}) is a non-profit organization dedicated to advancing learning and research 
         among pre-college students by supporting academic conferences organized by students, for students.
-        {org.acronym} is currently incubated inside the Center for Data Science at the College of AI, Cyber and Computing, 
-        University of Texas at San Antonio.
       </p>
 
       <p className={`mb-4 ${PROSE_WIDTH} text-[var(--color-ink-muted)]`}>
-        {org.acronym} is governed by a board of directors as chaired by Dr. Anthony Rios, Director of the Center for Data Science.
+        {org.acronym} is currently incubated inside the 
+        <a href="https://caicc.utsa.edu/center-for-data-science/" className="text-sm font-medium text-[var(--color-brand)] underline underline-offset-2">
+        Center for Data Science</a> at the 
+        <a href="https://caicc.utsa.edu/" className="text-sm font-medium text-[var(--color-brand)] underline underline-offset-2">
+      College of AI, Cyber and Computing</a>,
+        <a href="https://www.utsa.edu/" className="text-sm font-medium text-[var(--color-brand)] underline underline-offset-2">
+        The University of Texas at San Antonio</a>. 
+        It is governed by a board of directors, chaired by Dr. Anthony Rios, Director of the Center for Data Science.
       </p>
-
-      <ul className="mb-10 flex flex-wrap gap-x-6 gap-y-1">
-        {org.incubation.links.map((link) => (
-          <li key={link.url}>
-            <a
-              href={link.url}
-              className="text-sm font-medium text-[var(--color-brand)] underline underline-offset-2"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
 
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
         Board of Directors
@@ -51,18 +43,13 @@ export default function LeadershipPage() {
         {org.boardNote}
       </p>
 
+      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
+        Acknoweldgement
+      </h2>
       <div className={`rounded-lg bg-[var(--color-paper-raised)] p-5 shadow-sm ${PROSE_WIDTH}`}>
-        <p className="mb-2.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[var(--color-ink-muted)]">
-          <span
-            aria-hidden="true"
-            className="h-1.5 w-1.5 rounded-full bg-[var(--color-brand)]"
-          />
-          Acknowledgement
-        </p>
         <p className="text-sm text-[var(--color-ink-muted)]">
-          Site design &amp; development
+          We would like to thank Mr. {org.acknowledgement} for helping with the design and development of this website.
         </p>
-        <p className="text-base font-bold">{org.acknowledgement}</p>
       </div>
     </div>
   );
