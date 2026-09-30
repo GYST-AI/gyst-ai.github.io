@@ -39,7 +39,20 @@ export function OfficerCard({ officer }: { officer: Person }) {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,16,28,0.92)] from-10% via-[rgba(8,16,28,0.55)] via-40% to-transparent to-70%" />
       <div className="absolute inset-x-0 bottom-0 p-5">
-        <p className="text-lg font-extrabold text-white">{officer.name}</p>
+        <p className="text-lg font-extrabold text-white">
+          {officer.websiteUrl ? (
+            <a
+              href={officer.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-white/40 underline-offset-4 hover:decoration-white"
+            >
+              {officer.name}
+            </a>
+          ) : (
+            officer.name
+          )}
+        </p>
         <p className="text-xs font-bold uppercase tracking-wide text-[#a9cdf5]">
           {officer.role}
         </p>

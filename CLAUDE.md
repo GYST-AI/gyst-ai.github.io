@@ -51,9 +51,10 @@ single most common way this setup breaks.
    treatment without the same explicit confirmation.
 3. **Never promise publication, indexing, or DOIs.**
 4. **Never list a named person without confirmed consent.** Confirmed by the
-   founder so far: officers Chenlyvia Xiong and Zimo Wen, and the five
+   founder so far: officers Chenlyvia Xiong and Zimo Wen, and the four
    directors now in `org.board` (Anthony Rios, H Chad Lane, Chenlyvia Xiong,
-   Dana L. Suskind, Jinjun Xiong), confirmed by name on 2026-08-31. Nobody
+   Jinjun Xiong), confirmed by name on 2026-08-31 (Dana L. Suskind removed
+   2026-09-30). Nobody
    else ships. A board seat is not a reason to relax the rule; it is a reason
    to apply it, and the same goes for a Technical Program Committee seat.
 5. **No payment links, fee tables, or bank details.** Membership and sponsorship

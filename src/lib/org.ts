@@ -22,6 +22,8 @@ export type Person = {
   conferenceRole: string | null;
   affiliation: string | null;
   photoUrl: string | null;
+  /** Personal or faculty site; the name on the card links here when set. */
+  websiteUrl?: string;
 };
 
 /** Someone running the foundation day to day. */
@@ -165,19 +167,13 @@ export const org: OrgData = {
       photoUrl: "/images/leadership/chenlyvia-xiong.jpg",
     },
     {
-      name: "Dana L. Suskind, MD",
-      role: "Director",
-      conferenceRole: null,
-      affiliation: "Professor of Surgery, University of Chicago, Illinois",
-      photoUrl: "/images/leadership/dana-suskind.jpg",
-    },
-    {
       name: "H Chad Lane",
       role: "Director",
       conferenceRole: null,
       affiliation:
         "Professor, College of Education, University of Illinois Urbana-Champaign, Illinois",
       photoUrl: "/images/leadership/h-chad-lane.jpg",
+      websiteUrl: "https://hchadlane.net/",
     },
     {
       name: "Jinjun Xiong",
